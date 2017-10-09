@@ -3,12 +3,26 @@
 <head>
 	<title>AJAX</title>
 	<meta charset="utf-8">
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-	<button>Получить данные</button>
-
+<div class="container">
+	<div class="wrap-for-buttons">
+		<button value="dnipro">DNIPRO</button>
+		<button value="kiev">KIEV</button>
+		<button value="london">LONDON</button>
+		<button value="new-york">NY</button>
+	</div>
+	
+	<div class="wrap-for-results">
+		<p class="resultTemp result"></p>
+		<p class="resultWeather resul"t></p>
+	</div>
+</div>
 	<script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 </body>
