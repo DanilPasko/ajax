@@ -50,23 +50,58 @@ table {
 
 
 /*main style*/
-
+body {
+	font-family: 'Open Sans', sans-serif;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url('../main-bg.jpg');
+	height: 100vh;
+	background-position: center center;
+}
 .container {
 	width: 100%;
 	max-width: 1170px;
-	padding: 0 15px;
+	padding: 50px 15px;
+	margin: 0 auto;
 	box-sizing: border-box;
 }
 .wrap-for-buttons {
-	margin: 50px 0;
 	text-align: center;
 }
+.wrap-for-buttons button {
+	box-shadow: none;
+	text-transform: uppercase;
+	padding: 10px;
+	background: none;
+	font-size: 14px;
+	font-weight: 700;
+	border: 2px solid #000;
+	cursor: pointer;
+}
+.wrap-for-buttons button:hover,
+.wrap-for-buttons button.active {
+	background: #000;
+	color: #fff;
+}
+.wrap-for-buttons button.active:hover {
+	border-color: #fff;
+}
 .wrap-for-results {
-	margin: 50px 0;
+	margin: 50px 0 0;
+	display: inline-block;
+	background: rgba(0,0,0,.5);
+	padding: 10px 30px;
+	display: none;
 }
 .wrap-for-results p {
 	font-size: 30px;
 	line-height: 1.4;
 	text-align: center;
-	font-weight: bold;
+	font-weight: 700;
+	color: #fff;
+	display: inline-block;
+	padding: 0 10px;
+}
+.wrap-for-results .city {
+	text-transform: uppercase;
 }

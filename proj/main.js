@@ -1,9 +1,20 @@
-$('button').on('click', function(){
-	var xhr = new XMLHttpRequest();
+$('button').addClass("active");
+
+$('button').on('click', function(){	
+	$('button').removeClass("active");
+	$(this).addClass("active");
+
 	var city = $(this).attr("value");
-	var adress = 'http://api.openweathermap.org/data/2.5/weather?q='+ city + '&APPID=ade7221313e248ee596b11990178251d';
+	$(".wrap-for-results").css('display','inline-block');
+
+	var urlBackgroundForCity = "url('../" + city + ".jpg')";
+	$("body").css("background-image", urlBackgroundForCity);
+
+	var xhr = new XMLHttpRequest();
 	
-	xhr.open('GET', adress, true);
+	var address = 'http://api.openweathermap.org/data/2.5/weather?q='+ city + '&APPID=ade7221313e248ee596b11990178251d';
+	
+	xhr.open('GET', address, true);
 
 	xhr.send(); // (1)
 
@@ -15,13 +26,17 @@ $('button').on('click', function(){
 	  	if (xhr.status != 200) {
 		    alert(xhr.status + ': ' + xhr.statusText);
 	  	} else {
-	    	var a = xhr.responseText;
-	    	var b = JSON.parse(a);
-	    	var resultTemp = Math.round(b.main.temp - 273,15);
-	    	$('.resultTemp').text(resultTemp + 'C');
+	    	var answer = xhr.responseText;
+	    	var answerParse = JSON.parse(answer);
+	    	console.log(answerParse);
+	    	var resultTemp = Math.round(answerParse.main.temp - 273,15);
+	    	$('.resultTemp').text(resultTemp).append('<span>&#176;C</span>');
 
-	    	var resultWeather = b['weather'][0].main;
+	    	var resultWeather = answerParse['weather'][0].main;
 	    	$('.resultWeather').text(resultWeather);
+
+	    	$('.city').text(city);
+
 	  	};
 	};
 });
