@@ -48,6 +48,13 @@ table {
 }
 
 
+*:active, 
+*:hover, 
+*:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
 
 /*main style*/
 body {
@@ -125,4 +132,21 @@ body {
 	z-index: 1;
 	background-position: center center;
 	background-size: 100%;
+}
+
+
+
+
+
+@media screen and (max-width : 767px) {
+	.wrap-for-buttons {
+		padding: 20px 10px;
+	}
+	.wrap-for-buttons button {
+		font-size: 12px;
+	}
+	.wrap-for-results .result {
+		font-size: 18px;
+		padding: 10px;
+	}
 }
