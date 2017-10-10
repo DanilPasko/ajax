@@ -62,7 +62,7 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-image: url('../main-bg.jpg');
-	height: 100vh;
+	min-height: 100vh;
 	background-position: center center;
 }
 .container {
