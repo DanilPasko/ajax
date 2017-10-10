@@ -67,6 +67,9 @@ body {
 }
 .wrap-for-buttons {
 	text-align: center;
+	display: block;	
+	background: rgba(255,255,255,.7);
+	padding: 20px;
 }
 .wrap-for-buttons button {
 	box-shadow: none;
@@ -88,20 +91,38 @@ body {
 }
 .wrap-for-results {
 	margin: 50px 0 0;
-	display: inline-block;
-	background: rgba(0,0,0,.5);
+	background: rgba(0,0,0,.7);
 	padding: 10px 30px;
 	display: none;
+	flex-direction: column;
+	align-items: center;
 }
-.wrap-for-results p {
+.wrap-for-results .result {
 	font-size: 30px;
 	line-height: 1.4;
 	text-align: center;
 	font-weight: 700;
 	color: #fff;
-	display: inline-block;
 	padding: 0 10px;
-}
-.wrap-for-results .city {
 	text-transform: uppercase;
+
+}
+.wrap-for-results p span {
+	font-weight: normal;
+	text-transform: lowercase;
+}
+.wrap-for-results .result.resultWeather {
+	position: relative;
+} 
+.wrap-for-results .result.resultWeather i {
+	position: absolute;
+	right: -30px;
+	top: 50%;
+	transform: translate(0, -50%);
+	width: 40px;
+	height: 40px;
+	background-repeat: no-repeat;
+	z-index: 1;
+	background-position: center center;
+	background-size: 100%;
 }
